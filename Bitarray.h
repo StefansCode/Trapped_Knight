@@ -8,8 +8,9 @@ typedef struct bitarray{
 		unsigned char* start;
 }bitarray;
 
+bitarray* bitarray_create(int width, int height);
 
-bitarray* bitarray_init(int x, int y);
+void bitarray_init(bitarray *b, int x, int y);
 
 int bitarray_check_bit(bitarray* Bitarray, int x, int y);
 

@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include "Bitarray.h"
 
+bitarray* bitarray_create(int width, int height) {
 
-bitarray* bitarray_init(int x, int y){
-	
-	if( x%8 != 0 ){
+	if( width % 8 != 0 ){
 		printf("ERROR: The number of bits in one line of a bitarry must be divisible by 8.\n");
 		return NULL;
 	}
@@ -15,6 +14,14 @@ bitarray* bitarray_init(int x, int y){
 		printf("ERROR: Failed to allocate memory for newBitarray.\n");
 		return NULL;
 	}
+
+	bitarray_init(newBitarray, width, height);
+
+	return newBitarray;
+
+}
+
+void bitarray_init(bitarray*newBitarray, int x, int y) {
 	
 	newBitarray->width 	 	= x;
 	newBitarray->height 	 	= y;
@@ -25,8 +32,6 @@ bitarray* bitarray_init(int x, int y){
 	}
 	
 	bitarray_reset(newBitarray);
-	
-	return(newBitarray);
 }
 
 

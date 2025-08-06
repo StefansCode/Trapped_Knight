@@ -128,7 +128,7 @@ int* TK(int* output, int x_start, int y_start, int x_movement, int y_movement){
 	printf("(%4d,%4d) => ", x_movement, y_movement);
 	
 	// Initialise the bit-field.
-	bitarray* Field = bitarray_init(Field_size, Field_size);
+	bitarray* Field = bitarray_create(Field_size, Field_size);
 	if(Field == NULL){
 		return NULL;
 	}
