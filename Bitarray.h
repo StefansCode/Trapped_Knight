@@ -2,23 +2,23 @@
 #define BITARRAY_H
 
 
-typedef struct{
+typedef struct bitarray{
 		int x;
 		int x_bytes;
 		int y;
 		unsigned char* start;
-}b_arr;
+}bitarray;
 
 
-b_arr* init_Bitarray(int x, int y);
+bitarray* init_Bitarray(int x, int y);
 
-int check_Bit(b_arr* Bitarray, int x, int y);
+int check_Bit(bitarray* Bitarray, int x, int y);
 
-void flip_Bit(b_arr* Bitarray, int x, int y);
+void flip_Bit(bitarray* Bitarray, int x, int y);
 
-void print_Bitarray(b_arr* Bitarray);
+void print_Bitarray(bitarray* Bitarray);
 
-void reset_Bitarray(b_arr* Bitarray);
+void reset_Bitarray(bitarray* Bitarray);
 
 
 #endif //BITARRAY_H
