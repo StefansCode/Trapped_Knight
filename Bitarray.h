@@ -3,9 +3,8 @@
 
 
 typedef struct bitarray{
-		int x;
-		int x_bytes;
-		int y;
+		int width;
+		int height;
 		unsigned char* start;
 }bitarray;
 
