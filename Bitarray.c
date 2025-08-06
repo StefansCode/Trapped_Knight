@@ -22,10 +22,11 @@ bitarray* bitarray_create(int width, int height) {
 
 }
 
+
 void bitarray_init(bitarray*newBitarray, int x, int y) {
 	
-	newBitarray->width 	 	= x;
-	newBitarray->height 	 	= y;
+	newBitarray->width 	= x;
+	newBitarray->height = y;
 	newBitarray->start 	= malloc((x*y)/8);
 	if (newBitarray->start == NULL){
 		printf("ERROR: Failed to allocate memory for newBitarray->start.\n");
@@ -35,12 +36,15 @@ void bitarray_init(bitarray*newBitarray, int x, int y) {
 	bitarray_reset(newBitarray);
 }
 
+
 void bitarray_destroy(bitarray* b) {
 	
 	free(b->start);
 	b->start = NULL;
 
 }
+
+
 int bitarray_check_bit(bitarray* Bitarray, int x, int y){
 	
 	if( x < 0 || x > Bitarray->width || y < 0 || y > Bitarray->height){
