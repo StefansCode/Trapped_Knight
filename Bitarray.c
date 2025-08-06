@@ -3,7 +3,7 @@
 #include "Bitarray.h"
 
 
-bitarray* init_Bitarray(int x, int y){
+bitarray* bitarray_init(int x, int y){
 	
 	if( x%8 != 0 ){
 		printf("ERROR: The number of bits in one line of a bitarry must be divisible by 8.\n");
@@ -25,13 +25,13 @@ bitarray* init_Bitarray(int x, int y){
 		return NULL;
 	}
 	
-	reset_Bitarray(newBitarray);
+	bitarray_reset(newBitarray);
 	
 	return(newBitarray);
 }
 
 
-int check_Bit(bitarray* Bitarray, int x, int y){
+int bitarray_check_bit(bitarray* Bitarray, int x, int y){
 	
 	if( x < 0 || x > Bitarray->x || y < 0 || y > Bitarray->y){
 		printf("ERROR: Trying to access bit out of bound\n");
@@ -46,7 +46,7 @@ int check_Bit(bitarray* Bitarray, int x, int y){
 }
 
 
-void flip_Bit(bitarray* Bitarray, int x, int y){
+void bitarray_flip_bit(bitarray* Bitarray, int x, int y){
 	
 	if( x < 0 || x > Bitarray->x || y < 0 || y > Bitarray->y){
 		printf("ERROR: Trying to access bit out of bound\n");
@@ -61,17 +61,17 @@ void flip_Bit(bitarray* Bitarray, int x, int y){
 }
 
 
-void reset_Bitarray(bitarray* Bitarray){
+void bitarray_reset(bitarray* Bitarray){
 	for(int i=0; i < (Bitarray->x_bytes*Bitarray->y); i++){
 		*(Bitarray->start + i) = 0;
 	}
 }
 
 
-void print_Bitarray(bitarray* Bitarray){
+void bitarray_print(bitarray* Bitarray){
 	for(int i=0; i < Bitarray->y; i++){
 		for(int ii=0; ii < Bitarray->x; ii++){
-			if(check_Bit(Bitarray, ii, i)){
+			if(bitarray_check_bit(Bitarray, ii, i)){
 				printf("X ");
 			}
 			else{

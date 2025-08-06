@@ -10,15 +10,15 @@ typedef struct bitarray{
 }bitarray;
 
 
-bitarray* init_Bitarray(int x, int y);
+bitarray* bitarray_init(int x, int y);
 
-int check_Bit(bitarray* Bitarray, int x, int y);
+int bitarray_check_bit(bitarray* Bitarray, int x, int y);
 
-void flip_Bit(bitarray* Bitarray, int x, int y);
+void bitarray_flip_bit(bitarray* Bitarray, int x, int y);
 
-void print_Bitarray(bitarray* Bitarray);
+void bitarray_print(bitarray* Bitarray);
 
-void reset_Bitarray(bitarray* Bitarray);
+void bitarray_reset(bitarray* Bitarray);
 
 
 #endif //BITARRAY_H

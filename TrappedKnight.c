@@ -128,7 +128,7 @@ int* TK(int* output, int x_start, int y_start, int x_movement, int y_movement){
 	printf("(%4d,%4d) => ", x_movement, y_movement);
 	
 	// Initialise the bit-field.
-	bitarray* Field = init_Bitarray(Field_size, Field_size);
+	bitarray* Field = bitarray_init(Field_size, Field_size);
 	if(Field == NULL){
 		return NULL;
 	}
@@ -150,7 +150,7 @@ int* TK(int* output, int x_start, int y_start, int x_movement, int y_movement){
 	while(itt < maxitt){	
 		
 		// Mark the current position as visited.
-		flip_Bit(Field, current_x + ((Field_size/2)-1), (Field_size/2)-current_y);
+		bitarray_flip_bit(Field, current_x + ((Field_size/2)-1), (Field_size/2)-current_y);
 		
 		
 		// Fill next with all possible next positions
@@ -163,7 +163,7 @@ int* TK(int* output, int x_start, int y_start, int x_movement, int y_movement){
 		// gehe zur kleinsten noch freien Position.
 		int i;
 		for(i=0; i<8; i++){
-			if(!check_Bit(Field, next[2*i]+((Field_size/2)-1), (Field_size/2)-next[2*i+1])){
+			if(!bitarray_check_bit(Field, next[2*i]+((Field_size/2)-1), (Field_size/2)-next[2*i+1])){
 				current_x = next[2*i  ];
 				current_y = next[2*i+1];
 				break;
