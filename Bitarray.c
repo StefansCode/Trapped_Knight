@@ -30,7 +30,6 @@ void bitarray_init(bitarray*newBitarray, int x, int y) {
 	newBitarray->start 	= malloc((x*y)/8);
 	if (newBitarray->start == NULL){
 		printf("ERROR: Failed to allocate memory for newBitarray->start.\n");
-		return NULL;
 	}
 	
 	bitarray_reset(newBitarray);
