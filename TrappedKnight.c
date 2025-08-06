@@ -184,7 +184,7 @@ int* TK(int* output, int x_start, int y_start, int x_movement, int y_movement){
 	}
 	printf("\n");
 	
-	free(Field->start);
+	bitarray_destroy(Field);
 	free(Field);
 	free(next);
 	

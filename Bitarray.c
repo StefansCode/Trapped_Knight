@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "Bitarray.h"
 
+
 bitarray* bitarray_create(int width, int height) {
 
 	if( width % 8 != 0 ){
@@ -34,7 +35,12 @@ void bitarray_init(bitarray*newBitarray, int x, int y) {
 	bitarray_reset(newBitarray);
 }
 
+void bitarray_destroy(bitarray* b) {
+	
+	free(b->start);
+	b->start = NULL;
 
+}
 int bitarray_check_bit(bitarray* Bitarray, int x, int y){
 	
 	if( x < 0 || x > Bitarray->width || y < 0 || y > Bitarray->height){

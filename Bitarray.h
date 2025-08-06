@@ -12,6 +12,8 @@ bitarray* bitarray_create(int width, int height);
 
 void bitarray_init(bitarray *b, int x, int y);
 
+void bitarray_destroy(bitarray* b);
+
 int bitarray_check_bit(bitarray* Bitarray, int x, int y);
 
 void bitarray_flip_bit(bitarray* Bitarray, int x, int y);
